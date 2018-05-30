@@ -39,6 +39,13 @@ data:
       {{- end }}
       {{- end }}
       {{- end }}
+      {{- range .Values.secondaries }}
+        secondary {{ .domain }} {
+          {{- range .masters }}
+          transfer from {{ . }}
+          {{- end }}
+        }
+      {{- end }}
       {{- range .Values.zoneFiles }}
         file /etc/coredns/{{ .filename }} {{ .domain }}
       {{- end }}
