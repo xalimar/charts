@@ -77,3 +77,10 @@ zoneFiles: []
 #      example.com.   IN NS  a.iana-servers.net.
 #      example.com.   IN A   192.168.99.102
 #      *.example.com. IN A   192.168.99.102
+
+# configure secondary zones
+secondaries: []
+#  - domain: "example.com"
+#    masters:
+#      - "10.0.0.1"
+#      - "10.0.0.2"
