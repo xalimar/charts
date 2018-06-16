@@ -41,9 +41,21 @@ data:
       {{- end }}
       {{- range .Values.secondaries }}
         secondary {{ .domain }} {
-          {{- range .masters }}
+        {{- range .masters }}
           transfer from {{ . }}
-          {{- end }}
+        {{- end }}
+        {{- range .slaves }}
+          transfer to {{ . }}
+        {{- end }}
+        {{- with .upstream }}
+        {{- if .self }}
+          upstream
+        {{- else }}
+        {{- range .servers }}
+          upstream to {{ . }}
+        {{- end }}
+        {{- end }}
+        {{- end }}
         }
       {{- end }}
       {{- range .Values.zoneFiles }}

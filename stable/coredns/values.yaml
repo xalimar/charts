@@ -84,3 +84,14 @@ secondaries: []
 #    masters:
 #      - "10.0.0.1"
 #      - "10.0.0.2"
+#    slaves:
+#      - "10.0.1.1"
+#      - "10.0.1.2"
+# Specify external upstreams
+#    upstream:
+#      servers:
+#        - "10.0.0.1"
+#        - "10.0.0.2"
+# Specify ourself as upstream
+#    upstream:
+#      self: true
